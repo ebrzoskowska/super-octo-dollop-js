@@ -62,8 +62,8 @@ console.log(days[d.getDay()]);
 for (let year = 2014; year <= 2050; year++) 
 {
   let day = new Date(year, 0, 1);
-	if (day.getDay() === 0) 
-	  console.log(`1st January was a Sunday in ${year} year`)
+  if (day.getDay() === 0) 
+    console.log(`1st January was a Sunday in ${year} year`)
 }
 
 // task 6
@@ -76,12 +76,12 @@ for (let year = 2014; year <= 2050; year++)
 // console a template string which tells us that the string was wrong.
 
 const dataChecker = (string, rank) => {
-	if (string == 'codenation' && rank == 1) 
-		console.log('String and rank are correct')
-	else if (string == 'codenation' && rank !== 1)
-		console.log('String was correct but the rank was wrong')
-	else 
-		console.log('String was wrong')			
+  if (string == 'codenation' && rank == 1) 
+    console.log('String and rank are correct')
+  else if (string == 'codenation' && rank !== 1)
+    console.log('String was correct but the rank was wrong')
+  else 
+    console.log('String was wrong')			
 }
 dataChecker('teapot', 666)
 
@@ -100,18 +100,18 @@ const myButton = document.getElementById("submit");
 // like that
 myButton.addEventListener("click",() => {
   if (myInput.value == randomInt) {
-		document.getElementById("alert").innerHTML = "Good Work!!"
-	} else {
-		document.getElementById("alert").innerHTML = "Not matched!!"
-	}
+    document.getElementById("alert").innerHTML = "Good Work!!"
+  } else {
+    document.getElementById("alert").innerHTML = "Not matched!!"
+  }
 });
 
 // or like that
 const randomNumber = (event) => {
-	if  (myInput.value == randomInt && event.target == myButton) 
-		document.getElementById("alert").innerHTML = "Good Work!!"				
-	else 
-		document.getElementById("alert").innerHTML = "Not matched!!"	
+  if  (myInput.value == randomInt && event.target == myButton) 
+    document.getElementById("alert").innerHTML = "Good Work!!"				
+  else 
+    document.getElementById("alert").innerHTML = "Not matched!!"	
 }
 window.addEventListener('click', randomNumber, false);
 
@@ -133,9 +133,9 @@ console.log(Math.ceil(daysLeftUntilChristmas));
 // Your task is to write a function maskify, which changes all but the last four characters into '#'.
 
 function maskify(cc) {
-	let lastFourCHars = cc.slice(-4);
-	let wholeString = cc.replace(/./g, "#");
-	return wholeString + lastFourCHars;
+  let lastFourCHars = cc.slice(-4);
+  let wholeString = cc.replace(/./g, "#");
+  return wholeString + lastFourCHars;
 }
 console.log(maskify("zla gruba i brzydka"))
 
@@ -145,8 +145,8 @@ console.log(maskify("zla gruba i brzydka"))
 // If a value is present in b, all of its occurrences must be removed from the other.
 
 function difference(a, b) {
-	let difference = a.filter(x => b.indexOf(x) === -1);
-	return difference
+  let difference = a.filter(x => b.indexOf(x) === -1);
+  return difference
 }
 
 console.log(difference([1,2,2],[1]))
@@ -192,7 +192,7 @@ console.log(firstLetterUp())
 String.prototype.toJadenCase = function () {
   let newStr = this.split(" ");
   for(i = 0; i < newStr.length; i++) {
-		newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substring(1);
+    newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substring(1);
   }
   return newStr.join(" ");
 };
