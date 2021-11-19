@@ -5,8 +5,8 @@
 
 const reverseString = (newString) => {
 
-    let myString = "cholerka!";
-    return newString = myString.split("").reverse().join("");
+  let myString = "cholerka!";
+  return newString = myString.split("").reverse().join("");
 };
 console.log(reverseString());
 
@@ -61,9 +61,9 @@ console.log(days[d.getDay()]);
 
 for (let year = 2014; year <= 2050; year++) 
 {
-    let day = new Date(year, 0, 1);
+  let day = new Date(year, 0, 1);
 	if (day.getDay() === 0) 
-	    console.log(`1st January was a Sunday in ${year} year`)
+	  console.log(`1st January was a Sunday in ${year} year`)
 }
 
 // task 6
@@ -99,7 +99,7 @@ const myButton = document.getElementById("submit");
 
 // like that
 myButton.addEventListener("click",() => {
-    if (myInput.value == randomInt) {
+  if (myInput.value == randomInt) {
 		document.getElementById("alert").innerHTML = "Good Work!!"
 	} else {
 		document.getElementById("alert").innerHTML = "Not matched!!"
@@ -110,9 +110,8 @@ myButton.addEventListener("click",() => {
 const randomNumber = (event) => {
 	if  (myInput.value == randomInt && event.target == myButton) 
 		document.getElementById("alert").innerHTML = "Good Work!!"				
-	 else 
-		document.getElementById("alert").innerHTML = "Not matched!!"
-	
+	else 
+		document.getElementById("alert").innerHTML = "Not matched!!"	
 }
 window.addEventListener('click', randomNumber, false);
 
@@ -157,45 +156,45 @@ console.log(difference([1,2,2],[1]))
 // Note: y isn't considered a vowel.
 
 function disemvowel(str) {
-    return str.replace((/[aeiou]/gi), "");
+  return str.replace((/[aeiou]/gi), "");
 }
 
 // task 12
 // Change all first letters of given sentence to upper case
 
 const firstLetterUp = (oldStr) => {
-    const splitArr = oldStr.split(" "); 
-    let newStr = "";
+  const splitArr = oldStr.split(" "); 
+  let newStr = "";
     for(var i =0; i < splitArr.length; i++)
-      {
-        splitArr[i]= splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1);
-      }
-    return newStr += splitArr.join(" ");
+    {
+      splitArr[i]= splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1);
+    }
+  return newStr += splitArr.join(" ");
 }    
 console.log(firstLetterUp("How can mirrors be real if our eyes aren't real"))
 
 // or:
 
 const firstLetterUp = () => {
-    const oldStr = "How can mirrors be real if our eyes aren't real";
-    const splitArr = oldStr.split(" "); 
-    let newStr = "";
+  const oldStr = "How can mirrors be real if our eyes aren't real";
+  const splitArr = oldStr.split(" "); 
+  let newStr = "";
     for(var i =0; i < splitArr.length; i++)
-      {
-        splitArr[i]= splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1);
-      }
-    return newStr += splitArr.join(" ");
+    {
+      splitArr[i]= splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1);
     }
+    return newStr += splitArr.join(" ");
+}
 console.log(firstLetterUp())
 
 // or:
 
 String.prototype.toJadenCase = function () {
-    let newStr = this.split(" ");
-    for(i = 0; i < newStr.length; i++) {
+  let newStr = this.split(" ");
+  for(i = 0; i < newStr.length; i++) {
 		newStr[i] = newStr[i].charAt(0).toUpperCase() + newStr[i].substring(1);
-    }
-    return newStr.join(" ");
+  }
+  return newStr.join(" ");
 };
 
 // task 13
@@ -211,12 +210,24 @@ function digital_root(n) {
   let sum = 0;
 
   if (realDigits.length === 1) {
-      return realDigits[0];
+    return realDigits[0];
   }
   for (let i = 0; i < realDigits.length; i++) {
-      sum += realDigits[i];
+    sum += realDigits[i];
   }
   return digital_root(sum);
 }
 
-    
+// task 14
+// Split the string into pairs of two characters. 
+// If the string contains an odd number of characters then it should replace 
+// the missing second character of the final pair with an underscore ('_').
+
+function solution(str){
+  if (str.length % 2 === 0) {
+    return str.match(/.{1,2}/g) || []
+  } else {
+    str = str + '_';
+    return str.match(/.{1,2}/g)
+  }
+}
